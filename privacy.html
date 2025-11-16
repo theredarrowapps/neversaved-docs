@@ -5,190 +5,403 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy</title>
     <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-        margin: 20px;
-        line-height: 1.6;
-        color: #333;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      h1 {
-        font-size: 50px;
-        margin-bottom: 20px;
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.8;
+        color: #2c3e50;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #25D366 0%, #20ba5a 100%);
+        padding: 60px 40px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: pulse 15s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+
+      .header h1 {
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .header p {
+        font-size: 20px;
+        opacity: 0.95;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        padding: 50px 40px;
       }
 
       h2 {
-        font-size: 30px;
-        margin-top: 30px;
-        margin-bottom: 15px;
+        font-size: 32px;
+        color: #25D366;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
       }
-        
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #25D366 0%, #20ba5a 100%);
+        border-radius: 2px;
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+      }
+
       h3 {
         font-size: 26px;
-        margin-top: 20px;
-        margin-bottom: 10px;
+        color: #34495e;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-weight: 600;
       }
 
       p {
-        font-size: 26px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.9;
+        color: #555;
       }
 
       ul {
-        font-size: 26px;
-        margin-bottom: 15px;
+        margin: 20px 0;
+        padding-left: 0;
+        list-style: none;
       }
 
       li {
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-left: 35px;
+        position: relative;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #25D366;
+        font-weight: bold;
+        font-size: 20px;
       }
 
       a {
-        color: #007AFF;
+        color: #25D366;
         text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
       }
 
       a:hover {
-        text-decoration: underline;
+        border-bottom-color: #25D366;
+        opacity: 0.8;
+      }
+
+      .important-box {
+        background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+        border-left: 5px solid #ffc107;
+        padding: 25px 30px;
+        margin: 30px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.1);
+      }
+
+      .important-box p {
+        margin: 0;
+        color: #856404;
+        font-weight: 500;
+      }
+
+      .highlight-section {
+        background: linear-gradient(135deg, #e8f8f0 0%, #d4f1e5 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        border: 2px solid #25D366;
+      }
+
+      .highlight-section h2 {
+        margin-top: 0;
+      }
+
+      .contact-box {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        padding: 35px;
+        margin: 40px 0;
+        text-align: center;
+        border: 2px solid #dee2e6;
+      }
+
+      .contact-box p {
+        margin: 10px 0;
+        font-size: 19px;
+      }
+
+      .contact-box strong {
+        color: #25D366;
+        font-size: 22px;
+      }
+
+      .footer {
+        background: #f8f9fa;
+        padding: 30px 40px;
+        text-align: center;
+        border-top: 3px solid #25D366;
       }
 
       .effective-date {
         font-style: italic;
-        color: #666;
-        margin-top: 30px;
+        color: #6c757d;
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .section-divider {
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, #25D366 50%, transparent 100%);
+        margin: 50px 0;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 20px;
+          border-radius: 15px;
+        }
+
+        .header {
+          padding: 40px 25px;
+        }
+
+        .header h1 {
+          font-size: 36px;
+        }
+
+        .header p {
+          font-size: 17px;
+        }
+
+        .content {
+          padding: 35px 25px;
+        }
+
+        h2 {
+          font-size: 26px;
+        }
+
+        h3 {
+          font-size: 22px;
+        }
+
+        p, li {
+          font-size: 16px;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Privacy Policy</h1>
-    
-    <p>This Privacy Policy explains how NeverSaved ("we", "our", or "us") collects, uses, discloses, and protects information when you use our mobile application ("the App"). By using the App, you consent to the practices described in this Privacy Policy.</p>
+    <div class="container">
+      <div class="header">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy matters to us</p>
+      </div>
 
-    <h2>Our Commitment to Privacy</h2>
-    <p>NeverSaved is designed with privacy as a core principle. We do not collect, store, or transmit your personal information to our servers. The App operates entirely on your device.</p>
+      <div class="content">
+        <p>This Privacy Policy explains how NeverSaved ("we", "our", or "us") collects, uses, discloses, and protects information when you use our mobile application ("the App"). By using the App, you consent to the practices described in this Privacy Policy.</p>
 
-    <h2>Information We Do NOT Collect</h2>
-    <p>We want to be clear about what we do not collect:</p>
-    <ul>
-      <li>We do not store phone numbers you enter</li>
-      <li>We do not store messages you compose</li>
-      <li>We do not collect your contact list</li>
-      <li>We do not track your messaging activity</li>
-      <li>We do not collect personal identification information</li>
-      <li>We do not access your location data</li>
-    </ul>
+        <div class="highlight-section">
+          <h2>Our Commitment to Privacy</h2>
+          <p>NeverSaved is designed with privacy as a core principle. We do not collect, store, or transmit your personal information to our servers. The App operates entirely on your device.</p>
+        </div>
 
-    <h2>Information Stored Locally on Your Device</h2>
-    <p>The following information is stored only on your device and never transmitted to our servers:</p>
-    
-    <h3>User Preferences</h3>
-    <ul>
-      <li>Your dark mode preference</li>
-      <li>Your selected language preference</li>
-      <li>Your last selected country code</li>
-      <li>App usage count for ad display timing</li>
-    </ul>
-    
-    <p>This information remains on your device and is deleted when you uninstall the App.</p>
+        <h2>Information We Do NOT Collect</h2>
+        <p>We want to be clear about what we do not collect:</p>
+        <ul>
+          <li>We do not store phone numbers you enter</li>
+          <li>We do not store messages you compose</li>
+          <li>We do not collect your contact list</li>
+          <li>We do not track your messaging activity</li>
+          <li>We do not collect personal identification information</li>
+          <li>We do not access your location data</li>
+        </ul>
 
-    <h2>Clipboard Access</h2>
-    <p>The App can detect when you have copied a phone number to your clipboard. This feature:</p>
-    <ul>
-      <li>Only activates when you open the App</li>
-      <li>Only reads numeric content from your clipboard</li>
-      <li>Does not store clipboard content</li>
-      <li>Does not transmit clipboard content to any server</li>
-      <li>Is used solely to provide convenience in entering phone numbers</li>
-    </ul>
+        <h2>Information Stored Locally on Your Device</h2>
+        <p>The following information is stored only on your device and never transmitted to our servers:</p>
+        
+        <h3>User Preferences</h3>
+        <ul>
+          <li>Your dark mode preference</li>
+          <li>Your selected language preference</li>
+          <li>Your last selected country code</li>
+          <li>App usage count for ad display timing</li>
+        </ul>
+        
+        <p>This information remains on your device and is deleted when you uninstall the App.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>The App integrates with the following third-party services that may collect information:</p>
+        <div class="section-divider"></div>
 
-    <h3>Google AdMob</h3>
-    <p>We use Google AdMob to display advertisements within the App. AdMob may collect:</p>
-    <ul>
-      <li>Device advertising identifiers</li>
-      <li>IP address</li>
-      <li>Device information (model, OS version)</li>
-      <li>Ad interaction data</li>
-    </ul>
-    <p>AdMob's data collection is governed by Google's Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+        <h2>Clipboard Access</h2>
+        <p>The App can detect when you have copied a phone number to your clipboard. This feature:</p>
+        <ul>
+          <li>Only activates when you open the App</li>
+          <li>Only reads numeric content from your clipboard</li>
+          <li>Does not store clipboard content</li>
+          <li>Does not transmit clipboard content to any server</li>
+          <li>Is used solely to provide convenience in entering phone numbers</li>
+        </ul>
 
-    <h3>RevenueCat</h3>
-    <p>We use RevenueCat for subscription management and in-app purchases. RevenueCat may collect:</p>
-    <ul>
-      <li>Anonymous user identifiers</li>
-      <li>Purchase transaction data</li>
-      <li>Device information</li>
-    </ul>
-    <p>RevenueCat's privacy practices are described in their Privacy Policy: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
+        <h2>Third-Party Services</h2>
+        <p>The App integrates with the following third-party services that may collect information:</p>
 
-    <h3>External Messaging Applications</h3>
-    <p>When you use NeverSaved to open a chat in external messaging applications (WhatsApp, Telegram, iMessage, Signal, Viber), you are subject to those applications' privacy policies. We do not control or have access to any data shared with these applications.</p>
+        <h3>Google AdMob</h3>
+        <p>We use Google AdMob to display advertisements within the App. AdMob may collect:</p>
+        <ul>
+          <li>Device advertising identifiers</li>
+          <li>IP address</li>
+          <li>Device information (model, OS version)</li>
+          <li>Ad interaction data</li>
+        </ul>
+        <p>AdMob's data collection is governed by Google's Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
 
-    <h2>How We Use Information</h2>
-    <p>The limited information we process is used to:</p>
-    <ul>
-      <li>Enable the core functionality of opening chat windows in messaging apps</li>
-      <li>Remember your app preferences (language, theme, country code)</li>
-      <li>Display relevant advertisements through AdMob</li>
-      <li>Manage subscriptions and in-app purchases through RevenueCat</li>
-      <li>Improve app performance and user experience</li>
-    </ul>
+        <h3>RevenueCat</h3>
+        <p>We use RevenueCat for subscription management and in-app purchases. RevenueCat may collect:</p>
+        <ul>
+          <li>Anonymous user identifiers</li>
+          <li>Purchase transaction data</li>
+          <li>Device information</li>
+        </ul>
+        <p>RevenueCat's privacy practices are described in their Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></p>
 
-    <h2>Data Sharing and Disclosure</h2>
-    <p>We do not share, sell, or rent your personal information to third parties. The only data sharing that occurs is:</p>
-    <ul>
-      <li>With Google AdMob for advertisement display (as described above)</li>
-      <li>With RevenueCat for subscription management (as described above)</li>
-      <li>With external messaging apps when you choose to open a chat (the phone number and optional message you enter)</li>
-    </ul>
+        <h3>External Messaging Applications</h3>
+        <p>When you use NeverSaved to open a chat in external messaging applications (WhatsApp, Telegram, iMessage, Signal, Viber), you are subject to those applications' privacy policies. We do not control or have access to any data shared with these applications.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>The App is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+        <div class="section-divider"></div>
 
-    <h2>International Users</h2>
-    <p>The App is available globally and supports 200+ countries. However, please note that third-party services (AdMob, RevenueCat) may transfer data to servers located outside your country of residence. By using the App, you consent to such transfers.</p>
+        <h2>How We Use Information</h2>
+        <p>The limited information we process is used to:</p>
+        <ul>
+          <li>Enable the core functionality of opening chat windows in messaging apps</li>
+          <li>Remember your app preferences (language, theme, country code)</li>
+          <li>Display relevant advertisements through AdMob</li>
+          <li>Manage subscriptions and in-app purchases through RevenueCat</li>
+          <li>Improve app performance and user experience</li>
+        </ul>
 
-    <h2>Your Rights and Choices</h2>
-    <p>You have the following rights regarding your information:</p>
-    <ul>
-      <li>You can disable clipboard access in your device settings</li>
-      <li>You can clear locally stored preferences by uninstalling the App</li>
-      <li>You can opt out of personalized advertising in your device settings</li>
-      <li>You can disable ad tracking through your device's privacy settings</li>
-      <li>You can manage or cancel subscriptions through the App Store</li>
-    </ul>
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not share, sell, or rent your personal information to third parties. The only data sharing that occurs is:</p>
+        <ul>
+          <li>With Google AdMob for advertisement display (as described above)</li>
+          <li>With RevenueCat for subscription management (as described above)</li>
+          <li>With external messaging apps when you choose to open a chat (the phone number and optional message you enter)</li>
+        </ul>
 
-    <h2>Data Security</h2>
-    <p>We prioritize the security of your information:</p>
-    <ul>
-      <li>All data processing happens locally on your device</li>
-      <li>We do not maintain servers that store user data</li>
-      <li>Communication with third-party services uses industry-standard encryption</li>
-      <li>We regularly update the App to address security vulnerabilities</li>
-    </ul>
-    <p>However, please be aware that no method of electronic transmission or storage is 100% secure.</p>
+        <h2>Children's Privacy</h2>
+        <p>The App is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
 
-    <h2>Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or for other operational reasons. When we make changes:</p>
-    <ul>
-      <li>We will update the "Last Updated" date at the bottom of this policy</li>
-      <li>Material changes will be notified through the App or via email</li>
-      <li>Continued use of the App after changes constitutes acceptance of the updated policy</li>
-    </ul>
+        <h2>International Users</h2>
+        <p>The App is available globally and supports 200+ countries. However, please note that third-party services (AdMob, RevenueCat) may transfer data to servers located outside your country of residence. By using the App, you consent to such transfers.</p>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
-    <p>
-      Email: <a href="mailto:theredarrowapps@gmail.com">theredarrowapps@gmail.com</a><br>
-      Developer: Victor Sebastian<br>
-      The Red Arrow Apps
-    </p>
+        <h2>Your Rights and Choices</h2>
+        <p>You have the following rights regarding your information:</p>
+        <ul>
+          <li>You can disable clipboard access in your device settings</li>
+          <li>You can clear locally stored preferences by uninstalling the App</li>
+          <li>You can opt out of personalized advertising in your device settings</li>
+          <li>You can disable ad tracking through your device's privacy settings</li>
+          <li>You can manage or cancel subscriptions through the App Store</li>
+        </ul>
 
-    <h2>Consent</h2>
-    <p>By downloading, installing, and using NeverSaved, you acknowledge that you have read and understood this Privacy Policy and agree to its terms. If you do not agree with this Privacy Policy, please do not use the App.</p>
+        <h2>Data Security</h2>
+        <p>We prioritize the security of your information:</p>
+        <ul>
+          <li>All data processing happens locally on your device</li>
+          <li>We do not maintain servers that store user data</li>
+          <li>Communication with third-party services uses industry-standard encryption</li>
+          <li>We regularly update the App to address security vulnerabilities</li>
+        </ul>
+        <p>However, please be aware that no method of electronic transmission or storage is 100% secure.</p>
 
-    <p class="effective-date">Last Updated: November 16, 2025</p>
+        <div class="section-divider"></div>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or for other operational reasons. When we make changes:</p>
+        <ul>
+          <li>We will update the "Last Updated" date at the bottom of this policy</li>
+          <li>Material changes will be notified through the App or via email</li>
+          <li>Continued use of the App after changes constitutes acceptance of the updated policy</li>
+        </ul>
+
+        <div class="contact-box">
+          <h2 style="margin-top: 0; padding-bottom: 0;">Contact Us</h2>
+          <h2 style="display: none;"></h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
+          <p><strong>The Red Arrow Apps</strong></p>
+          <p>Email: <a href="mailto:theredarrowapps@gmail.com">theredarrowapps@gmail.com</a></p>
+        </div>
+
+        <div class="important-box">
+          <p><strong>Consent:</strong> By downloading, installing, and using NeverSaved, you acknowledge that you have read and understood this Privacy Policy and agree to its terms. If you do not agree with this Privacy Policy, please do not use the App.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p class="effective-date">Last Updated: November 16, 2025</p>
+      </div>
+    </div>
   </body>
 </html>
