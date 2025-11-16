@@ -3,176 +3,530 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions</title>
+    <title>Terms & Conditions for NeverSaved</title>
     <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-        margin: 20px;
-        line-height: 1.6;
-        color: #333;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      h1 {
-        font-size: 50px;
-        margin-bottom: 20px;
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.8;
+        color: #2c3e50;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #25D366 0%, #20ba5a 100%);
+        padding: 60px 40px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: pulse 15s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+
+      .header h1 {
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .header p {
+        font-size: 20px;
+        opacity: 0.95;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        padding: 50px 40px;
       }
 
       h2 {
-        font-size: 30px;
-        margin-top: 30px;
-        margin-bottom: 15px;
+        font-size: 32px;
+        color: #25D366;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #25D366 0%, #20ba5a 100%);
+        border-radius: 2px;
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
       }
 
       h3 {
         font-size: 26px;
-        margin-top: 20px;
-        margin-bottom: 10px;
+        color: #34495e;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-weight: 600;
       }
 
       p {
-        font-size: 26px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.9;
+        color: #555;
       }
 
       ul {
-        font-size: 26px;
-        margin-bottom: 15px;
+        margin: 20px 0;
+        padding-left: 0;
+        list-style: none;
       }
 
       li {
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-left: 35px;
+        position: relative;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #25D366;
+        font-weight: bold;
+        font-size: 20px;
       }
 
       a {
-        color: #007AFF;
+        color: #25D366;
         text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
       }
 
       a:hover {
-        text-decoration: underline;
+        border-bottom-color: #25D366;
+        opacity: 0.8;
+      }
+
+      .important-box {
+        background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+        border-left: 5px solid #ffc107;
+        padding: 25px 30px;
+        margin: 30px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.1);
+      }
+
+      .important-box p {
+        margin: 0;
+        color: #856404;
+        font-weight: 500;
+      }
+
+      .warning-box {
+        background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+        border-left: 5px solid #dc3545;
+        padding: 25px 30px;
+        margin: 30px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.1);
+      }
+
+      .warning-box p {
+        margin: 0;
+        color: #721c24;
+        font-weight: 500;
+      }
+
+      .highlight-section {
+        background: linear-gradient(135deg, #e8f8f0 0%, #d4f1e5 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        border: 2px solid #25D366;
+      }
+
+      .highlight-section h2 {
+        margin-top: 0;
+      }
+
+      .contact-box {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        padding: 35px;
+        margin: 40px 0;
+        text-align: center;
+        border: 2px solid #dee2e6;
+      }
+
+      .contact-box p {
+        margin: 10px 0;
+        font-size: 19px;
+      }
+
+      .contact-box strong {
+        color: #25D366;
+        font-size: 22px;
+      }
+
+      .footer {
+        background: #f8f9fa;
+        padding: 30px 40px;
+        text-align: center;
+        border-top: 3px solid #25D366;
       }
 
       .effective-date {
         font-style: italic;
-        color: #666;
-        margin-top: 30px;
+        color: #6c757d;
+        font-size: 17px;
+        font-weight: 500;
       }
 
-      .important {
-        background-color: #FFF3CD;
-        padding: 15px;
-        border-left: 4px solid #FFC107;
-        margin: 20px 0;
+      .section-divider {
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, #25D366 50%, transparent 100%);
+        margin: 50px 0;
+      }
+
+      .numbered-section {
+        counter-reset: section;
+      }
+
+      .numbered-section h2::before {
+        counter-increment: section;
+        content: counter(section) ". ";
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 20px;
+          border-radius: 15px;
+        }
+
+        .header {
+          padding: 40px 25px;
+        }
+
+        .header h1 {
+          font-size: 36px;
+        }
+
+        .header p {
+          font-size: 17px;
+        }
+
+        .content {
+          padding: 35px 25px;
+        }
+
+        h2 {
+          font-size: 26px;
+        }
+
+        h3 {
+          font-size: 22px;
+        }
+
+        p, li {
+          font-size: 16px;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Terms & Conditions</h1>
-    
-    <p>These Terms & Conditions ("Terms", "Agreement") govern your access to and use of the NeverSaved mobile application ("the App", "Service") developed and operated by The Red Arrow Apps ("we", "our", "us", or "Company"). By downloading, installing, accessing, or using the App, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use the App.</p>
+    <div class="container">
+      <div class="header">
+        <h1>Terms & Conditions</h1>
+        <p>Please read before using NeverSaved</p>
+      </div>
 
-    <div class="important">
-      <p><strong>Important:</strong> Please read these Terms carefully before using NeverSaved. Your use of the App constitutes your acceptance of these Terms.</p>
+      <div class="content">
+        <p>These Terms & Conditions ("Terms", "Agreement") govern your access to and use of the NeverSaved mobile application ("the App", "Service") developed and operated by The Red Arrow Apps ("we", "our", "us", or "Company"). By downloading, installing, accessing, or using the App, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use the App.</p>
+
+        <div class="important-box">
+          <p><strong>Important:</strong> Please read these Terms carefully before using NeverSaved. Your use of the App constitutes your acceptance of these Terms.</p>
+        </div>
+
+        <div class="numbered-section">
+          <h2>Acceptance of Terms</h2>
+          <p>By accessing or using NeverSaved, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms apply to all users of the App.</p>
+
+          <h2>Description of Service</h2>
+          <p>NeverSaved is a mobile application that provides the following services:</p>
+          <ul>
+            <li>Facilitates opening chat windows in supported messaging applications (WhatsApp, Telegram, iMessage, Signal, and Viber) without requiring you to save phone numbers to your device contacts</li>
+            <li>Allows entry of phone numbers with international country code selection</li>
+            <li>Enables optional pre-filled messages for supported platforms</li>
+            <li>Provides clipboard detection for convenient phone number entry</li>
+            <li>Offers customization options including dark mode and multi-language support</li>
+          </ul>
+
+          <h2>Eligibility</h2>
+          <p>You must be at least 13 years of age to use this App. By using the App, you represent and warrant that you meet this age requirement. If you are under 18, you must have permission from a parent or legal guardian to use the App.</p>
+
+          <h2>License Grant</h2>
+          <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App on your personal iOS device solely for your personal, non-commercial use.</p>
+
+          <h3>License Restrictions</h3>
+          <p>You agree not to:</p>
+          <ul>
+            <li>Modify, adapt, translate, or create derivative works of the App</li>
+            <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App</li>
+            <li>Remove, alter, or obscure any copyright, trademark, or other proprietary rights notices</li>
+            <li>Rent, lease, lend, sell, redistribute, or sublicense the App</li>
+            <li>Use the App for any illegal or unauthorized purpose</li>
+            <li>Interfere with or disrupt the App or servers or networks connected to the App</li>
+            <li>Circumvent or attempt to circumvent any security features of the App</li>
+          </ul>
+
+          <div class="section-divider"></div>
+
+          <h2>User Permissions and Data Access</h2>
+          
+          <h3>Clipboard Access</h3>
+          <p>The App may access your device clipboard to detect copied phone numbers for your convenience. This access:</p>
+          <ul>
+            <li>Only occurs when you open the App</li>
+            <li>Only reads numeric content</li>
+            <li>Does not store or transmit clipboard content to our servers</li>
+            <li>Can be disabled through your device settings</li>
+          </ul>
+
+          <h3>External App Integration</h3>
+          <p>The App opens external messaging applications using their respective URL schemes. By using this functionality, you acknowledge that:</p>
+          <ul>
+            <li>The external app's terms of service and privacy policy apply</li>
+            <li>We have no control over or responsibility for these external applications</li>
+            <li>The phone number and optional message you provide will be passed to the external application</li>
+          </ul>
+
+          <h2>User Responsibilities</h2>
+          <p>You are solely responsible for:</p>
+          <ul>
+            <li>The accuracy of phone numbers you enter into the App</li>
+            <li>The content of any messages you compose</li>
+            <li>Obtaining necessary permissions before contacting any individual</li>
+            <li>Complying with applicable laws and regulations regarding communications</li>
+            <li>Your interactions with external messaging applications</li>
+            <li>Maintaining the security of your device</li>
+          </ul>
+
+          <h3>Prohibited Uses</h3>
+          <p>You agree not to use the App to:</p>
+          <ul>
+            <li>Send spam, unsolicited messages, or engage in harassment</li>
+            <li>Violate any applicable laws or regulations</li>
+            <li>Infringe upon the rights of others</li>
+            <li>Send fraudulent, deceptive, or misleading messages</li>
+            <li>Engage in any activity that could harm minors</li>
+            <li>Distribute malware, viruses, or harmful code</li>
+            <li>Impersonate any person or entity</li>
+          </ul>
+
+          <div class="section-divider"></div>
+
+          <h2>Third-Party Services</h2>
+          
+          <h3>Advertising</h3>
+          <p>The App displays advertisements through Google AdMob. Your interaction with advertisements is subject to Google's terms of service and privacy policy. We are not responsible for the content of third-party advertisements.</p>
+
+          <h3>Subscriptions and In-App Purchases</h3>
+          <p>The App may offer optional subscriptions or in-app purchases managed through RevenueCat and Apple's App Store:</p>
+          <ul>
+            <li>All purchases are processed through the Apple App Store</li>
+            <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
+            <li>You can manage and cancel subscriptions in your App Store account settings</li>
+            <li>Refunds are handled according to Apple's App Store refund policy</li>
+            <li>Prices are displayed in the App and may vary by region</li>
+          </ul>
+
+          <h3>External Messaging Applications</h3>
+          <p>The App requires compatible messaging applications (WhatsApp, Telegram, iMessage, Signal, Viber) to be installed on your device. We do not own, control, or endorse these applications and are not responsible for their functionality, availability, or content.</p>
+
+          <h2>Intellectual Property Rights</h2>
+          <p>The App and all its content, features, and functionality, including but not limited to:</p>
+          <ul>
+            <li>Software code and architecture</li>
+            <li>User interface design and graphics</li>
+            <li>Logos, trademarks, and brand elements</li>
+            <li>Text, images, and icons</li>
+            <li>Country data and flag images</li>
+          </ul>
+          <p>are owned by The Red Arrow Apps or its licensors and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+
+          <h2>Privacy and Data Protection</h2>
+          <p>Your use of the App is also governed by our Privacy Policy, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand how we handle information. Key points include:</p>
+          <ul>
+            <li>We do not collect or store phone numbers you enter</li>
+            <li>We do not collect or store messages you compose</li>
+            <li>User preferences are stored locally on your device</li>
+            <li>Third-party services (AdMob, RevenueCat) may collect limited data as described in our Privacy Policy</li>
+          </ul>
+
+          <div class="section-divider"></div>
+
+          <h2>Disclaimer of Warranties</h2>
+          <div class="warning-box">
+            <p>THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE RED ARROW APPS DISCLAIMS ALL WARRANTIES.</p>
+          </div>
+          <p>We do not warrant that:</p>
+          <ul>
+            <li>The App will meet your specific requirements</li>
+            <li>The App will be available at all times or in all locations</li>
+            <li>Any errors or defects will be corrected</li>
+            <li>The App is free from viruses or harmful components</li>
+            <li>External messaging applications will function as expected</li>
+          </ul>
+
+          <h2>Limitation of Liability</h2>
+          <div class="warning-box">
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE RED ARROW APPS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA, OR USE.</p>
+          </div>
+
+          <h2>Indemnification</h2>
+          <p>You agree to defend, indemnify, and hold harmless The Red Arrow Apps from and against any claims, liabilities, damages, losses, costs, expenses, or fees arising from:</p>
+          <ul>
+            <li>Your use or misuse of the App</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any rights of another party</li>
+            <li>Your violation of any applicable laws or regulations</li>
+            <li>Content you submit through the App to external messaging applications</li>
+          </ul>
+
+          <h2>Availability and Updates</h2>
+          <p>We reserve the right to:</p>
+          <ul>
+            <li>Modify, suspend, or discontinue the App or any feature at any time</li>
+            <li>Release updates, upgrades, or new versions of the App</li>
+            <li>Change these Terms at any time</li>
+            <li>Impose limits on certain features or restrict access to parts or all of the App</li>
+          </ul>
+
+          <div class="section-divider"></div>
+
+          <h2>Termination</h2>
+          <p>These Terms remain in effect until terminated by either you or The Red Arrow Apps.</p>
+
+          <h3>Termination by You</h3>
+          <p>You may terminate these Terms at any time by:</p>
+          <ul>
+            <li>Uninstalling the App from your device</li>
+            <li>Ceasing all use of the App</li>
+          </ul>
+
+          <h3>Termination by Us</h3>
+          <p>We may terminate or suspend your access to the App immediately, without prior notice or liability, for any reason, including if you breach these Terms.</p>
+
+          <h2>Changes to Terms</h2>
+          <p>We reserve the right to modify or replace these Terms at any time. If we make material changes, we will:</p>
+          <ul>
+            <li>Update the "Last Updated" date at the bottom of these Terms</li>
+            <li>Notify you through the App or via email</li>
+            <li>Provide a reasonable notice period before changes take effect</li>
+          </ul>
+          <p>Your continued use of the App after any changes constitutes acceptance of the new Terms.</p>
+
+          <h2>Geographic Restrictions</h2>
+          <p>The App is available globally and supports 200+ countries. However:</p>
+          <ul>
+            <li>We make no representation that the App is appropriate or available for use in all locations</li>
+            <li>Access to the App may not be legal in some countries</li>
+            <li>You are responsible for compliance with local laws</li>
+            <li>Some features may not be available in all regions</li>
+          </ul>
+
+          <h2>Governing Law and Dispute Resolution</h2>
+          
+          <h3>Governing Law</h3>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario, Canada, without regard to its conflict of law provisions.</p>
+
+          <h3>Dispute Resolution</h3>
+          <p>Any dispute arising out of or relating to these Terms or the App shall be resolved through:</p>
+          <ul>
+            <li>First, informal negotiation by contacting us at theredarrowapps@gmail.com</li>
+            <li>If informal resolution fails, disputes shall be subject to the exclusive jurisdiction of the courts located in Ontario, Canada</li>
+          </ul>
+
+          <h2>Apple App Store Additional Terms</h2>
+          <p>If you downloaded the App from the Apple App Store, the following additional terms apply:</p>
+          <ul>
+            <li>These Terms are between you and The Red Arrow Apps, not Apple</li>
+            <li>Apple has no obligation to furnish maintenance and support services</li>
+            <li>Apple is not responsible for addressing any claims relating to the App</li>
+            <li>Apple is a third-party beneficiary of these Terms and may enforce them</li>
+          </ul>
+
+          <h2>Severability and Waiver</h2>
+          <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in full force and effect.</p>
+
+          <h2>Entire Agreement</h2>
+          <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and The Red Arrow Apps regarding the App and supersede all prior agreements and understandings.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="contact-box">
+          <h2 style="margin-top: 0; padding-bottom: 0;">Contact Information</h2>
+          <h2 style="display: none;"></h2>
+          <p>If you have any questions, concerns, or feedback regarding these Terms or the App, please contact us at:</p>
+          <p><strong>The Red Arrow Apps</strong></p>
+          <p>Email: <a href="mailto:theredarrowapps@gmail.com">theredarrowapps@gmail.com</a></p>
+          <p>Location: Ontario, Canada</p>
+        </div>
+
+        <div class="important-box">
+          <p><strong>Acknowledgment:</strong> BY DOWNLOADING, INSTALLING, ACCESSING, OR USING NEVERSAVED, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS, UNDERSTAND THEM, AND AGREE TO BE BOUND BY THEM. IF YOU DO NOT AGREE TO THESE TERMS, YOU MUST NOT USE THE APP.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p class="effective-date">Last Updated: November 16, 2025</p>
+      </div>
     </div>
-
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing or using NeverSaved, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms apply to all users of the App.</p>
-
-    <h2>2. Description of Service</h2>
-    <p>NeverSaved is a mobile application that provides the following services:</p>
-    <ul>
-      <li>Facilitates opening chat windows in supported messaging applications (WhatsApp, Telegram, iMessage, Signal, and Viber) without requiring you to save phone numbers to your device contacts</li>
-      <li>Allows entry of phone numbers with international country code selection</li>
-      <li>Enables optional pre-filled messages for supported platforms</li>
-      <li>Provides clipboard detection for convenient phone number entry</li>
-      <li>Offers customization options including dark mode and multi-language support</li>
-    </ul>
-
-    <h2>3. Eligibility</h2>
-    <p>You must be at least 13 years of age to use this App. By using the App, you represent and warrant that you meet this age requirement. If you are under 18, you must have permission from a parent or legal guardian to use the App.</p>
-
-    <h2>4. License Grant</h2>
-    <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App on your personal iOS device solely for your personal, non-commercial use.</p>
-
-    <h3>License Restrictions</h3>
-    <p>You agree not to:</p>
-    <ul>
-      <li>Modify, adapt, translate, or create derivative works of the App</li>
-      <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App</li>
-      <li>Remove, alter, or obscure any copyright, trademark, or other proprietary rights notices</li>
-      <li>Rent, lease, lend, sell, redistribute, or sublicense the App</li>
-      <li>Use the App for any illegal or unauthorized purpose</li>
-      <li>Interfere with or disrupt the App or servers or networks connected to the App</li>
-      <li>Circumvent or attempt to circumvent any security features of the App</li>
-    </ul>
-
-    <h2>5. User Permissions and Data Access</h2>
-    
-    <h3>5.1 Clipboard Access</h3>
-    <p>The App may access your device clipboard to detect copied phone numbers for your convenience. This access:</p>
-    <ul>
-      <li>Only occurs when you open the App</li>
-      <li>Only reads numeric content</li>
-      <li>Does not store or transmit clipboard content to our servers</li>
-      <li>Can be disabled through your device settings</li>
-    </ul>
-
-    <h3>5.2 External App Integration</h3>
-    <p>The App opens external messaging applications using their respective URL schemes. By using this functionality, you acknowledge that:</p>
-    <ul>
-      <li>The external app's terms of service and privacy policy apply</li>
-      <li>We have no control over or responsibility for these external applications</li>
-      <li>The phone number and optional message you provide will be passed to the external application</li>
-    </ul>
-
-    <h2>6. User Responsibilities</h2>
-    <p>You are solely responsible for:</p>
-    <ul>
-      <li>The accuracy of phone numbers you enter into the App</li>
-      <li>The content of any messages you compose</li>
-      <li>Obtaining necessary permissions before contacting any individual</li>
-      <li>Complying with applicable laws and regulations regarding communications</li>
-      <li>Your interactions with external messaging applications</li>
-      <li>Maintaining the security of your device</li>
-    </ul>
-
-    <h3>Prohibited Uses</h3>
-    <p>You agree not to use the App to:</p>
-    <ul>
-      <li>Send spam, unsolicited messages, or engage in harassment</li>
-      <li>Violate any applicable laws or regulations</li>
-      <li>Infringe upon the rights of others</li>
-      <li>Send fraudulent, deceptive, or misleading messages</li>
-      <li>Engage in any activity that could harm minors</li>
-      <li>Distribute malware, viruses, or harmful code</li>
-      <li>Impersonate any person or entity</li>
-    </ul>
-
-    <h2>7. Third-Party Services</h2>
-    
-    <h3>7.1 Advertising</h3>
-    <p>The App displays advertisements through Google AdMob. Your interaction with advertisements is subject to Google's terms of service and privacy policy. We are not responsible for the content of third-party advertisements.</p>
-
-    <h3>7.2 Subscriptions and In-App Purchases</h3>
-    <p>The App may offer optional subscriptions or in-app purchases managed through RevenueCat and Apple's App Store:</p>
-    <ul>
-      <li>All purchases are processed through the Apple App Store</li>
-      <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
-      <li>You can manage and cancel subscriptions in your App Store account settings</li>
-      <li>Refunds are handled according to Apple's App Store refund policy</li>
-      <li>Prices are displayed in the App and may vary by region</li>
-    </ul>
-
-    <h3>7.3 External Messaging Applications</h3>
-    <p>The App requires compatible messaging applications (WhatsApp, Telegram, iMessage, Signal, Viber) to be installed on your device. We do not own, control, or endorse these applications and are not responsible for their functionality, availability, or content.</p>
-
-    <h2>8. Intellectual Property Rights</h2>
-    <p>The App and all its content, features, and functionality, including but not limited to:</p>
-    <ul>
-      <li>Software code and architecture</li>
-      <li>User interface design and graphics</li>
-      <li>Logos, trademarks, and brand elements</li>
-      <li>Text, images, and icons</li>
-      <li>Country data and flag images</li>
-    </ul>
-    <p>are owned by The Red Arrow Apps or its licensors and are protected by international copyright, trademark, pate
+  </body>
+</html>
